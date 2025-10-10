@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ghost Skate | Code: ghostskate25</title>
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Ghost Skate — tap to copy your code" />
+  <meta property="og:description" content="Tap the image to copy: ghostskate25. Then head to drink-wax.com." />
+  <meta property="og:image" content="promo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root { --pad: 18px; --radius: 16px; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      margin: 0; padding: var(--pad);
+      display: grid; place-items: center; min-height: 100dvh;
+      background: #0b0b0c; color: #f6f7f8;
+    }
+    .wrap { width: 100%; max-width: 520px; text-align: center; }
+    .img-wrap { position: relative; border-radius: var(--radius); overflow: hidden; }
+    img#couponImage { display: block; width: 100%; height: auto; cursor: pointer; }
+    .badge {
+      position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%);
+      background: rgba(0,0,0,.6); border: 1px solid rgba(255,255,255,.2);
+      padding: 8px 12px; border-radius: 999px; backdrop-filter: blur(6px);
+      font-weight: 600; font-size: 14px;
+    }
+    .code { font-weight: 800; letter-spacing: .6px; }
+    .status { margin: 10px 0 16px; min-height: 24px; opacity: .9; font-size: 14px; }
+    a.cta {
+      display: inline-block; text-decoration: none; color: #0b0b0c; background: #f6f7f8;
+      padding: 12px 16px; border-radius: 12px; font-weight: 700; border: 1px solid #ddd;
+    }
+    .hint { margin-top: 10px; font-size: 12px; opacity: .7; }
+    .footer { margin-top: 28px; font-size: 12px; opacity: .5; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="img-wrap">
+      <img id="couponImage" src="promo.jpg" alt="Tap to copy: ghostskate25" />
+      <div class="badge">Tap image to copy <span class="code">ghostskate25</span></div>
+    </div>
+
+    <div class="status" id="status"></div>
+
+    <p><a class="cta" href="https://drink-wax.com" target="_blank" rel="noopener">Go to drink-wax.com →</a></p>
+
+    <p class="hint">If copy doesn't work on your device, press and hold the image to copy the code manually.</p>
+
+    <div class="footer">© Ghost Skate</div>
+  </div>
+
+  <script>
+    const CODE = "ghostskate25";
+    const img = document.getElementById("couponImage");
+    const statusEl = document.getElementById("status");
+
+    async function copyCode() {
+      try {
+        await navigator.clipboard.writeText(CODE);
+        statusEl.textContent = "Copied! Code ready: " + CODE;
+      } catch (err) {
+        statusEl.textContent = "Could not auto-copy. Long-press the image to copy the code.";
+      }
+    }
+    img.addEventListener("click", copyCode);
+    img.setAttribute("tabindex", "0");
+    img.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        copyCode();
+      }
+    });
+  </script>
+</body>
+</html>
