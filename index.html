@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ghost Skate | 25% code: ghostskate2025</title>
+  <title>Ghost Skate | 25% code: ghostskate25</title>
 
   <!-- Social preview -->
   <meta property="og:title" content="Click for discount code" />
-  <meta property="og:description" content="Tap the can image to copy discount code Then head to DRINK-WAX.com." />
+  <meta property="og:description" content="Tap the can for Alex's discount code." />
   <meta property="og:image" content="promo.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -44,7 +44,7 @@
   <div class="wrap">
     <div class="img-wrap">
       <img id="couponImage" src="promo.jpg" alt="Tap can to copy Alex's discount code" />
-      <div class="badge">Tap can to copy Alex's discount code: <span class="code">ghostskate2025</span></div>
+      <div class="badge">Tap can to copy Alex's discount code</div>
     </div>
 
     <div class="status" id="status"></div>
@@ -57,14 +57,14 @@
   </div>
 
   <script>
-    const CODE = "ghostskate2025";
+    const CODE = "ghostskate25";
     const img = document.getElementById("couponImage");
     const statusEl = document.getElementById("status");
 
     async function copyCode() {
       try {
         await navigator.clipboard.writeText(CODE);
-        statusEl.textContent = "Copied! 25% code ready: " + CODE;
+        statusEl.textContent = "Copied! 25% code ready - ghostskate25: " + CODE;
       } catch (err) {
         statusEl.textContent = "Could not auto-copy. Long-press the image to copy the code.";
       }
