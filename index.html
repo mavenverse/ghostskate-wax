@@ -64,7 +64,7 @@
     async function copyCode() {
       try {
         await navigator.clipboard.writeText(CODE);
-        statusEl.textContent = "Copied! 25% code ready - ghostskate25: " + CODE;
+        statusEl.textContent = "Copied! 25% code ready: " + CODE;
       } catch (err) {
         statusEl.textContent = "Could not auto-copy. Long-press the image to copy the code.";
       }
